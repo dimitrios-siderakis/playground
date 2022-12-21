@@ -1,0 +1,11 @@
+This was supposed to be a simple fix 
+
+its not 
+
+This line belongs to file called function1
+
+This line should be deleted 
+
+This line belongs to file called function2
+
+Here is the actual problemmmmm
