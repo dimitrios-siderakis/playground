@@ -1,0 +1,83 @@
+1. CD command
+
+The primary purpose of the command is to alter the current directory
+
+cd /usr/local/doc
+
+2.  Alias Command
+
+The command Alias is an amazing way to personalize and organize all your commands. 
+It allows users to designate a name to a single command or even a string of commands
+
+alias cls=clear
+
+3. curl Command
+
+The curl is a highly functional tool to recover data from URLs (Uniform Resource Locators) or internet repositories.
+For Ubuntu or Debian-based Linux variations, use apt-get to install the package. Other distributions have to use the package managers. Package managers terminate the need to install software and instead makes it automated manually.
+Below is the expression to install on Debian-based Linux variations: sudo apt-get install curl
+
+The following single line of command will retrieve the file a user wants:
+
+curl https://raw.githubusercontent.com/smiths/linux/master/kernel/events/core.c -o core.c
+
+4. cat Command
+
+The cat command is simple, and one of the most frequently used commands that are used in a variety of ways. 
+It is short for ‘concatenate’ and permits users to create files, redirect output, list the contents of a file, and even concatenate multiple files.
+
+cat /etc/passwd
+
+Next, type the following to view the contents of multiple files, in this case, test2 and test3:
+cat test2 test 3
+
+5. df Command
+
+The df is a fundamental command on Linux. Using df, coders can display the size, available space, and used space on the filesystems of the device.
+It comes with multiple options, such as the following:
+a, –all : it includes duplicate and files that are inaccessible
+-x: exclude specific filesystems
+-i, –inodes: it list inode information rather than that of block usage
+-T, –print-type: prints the type of file system
+-P, –portability: it will use the POSIX output format
+-B, –block-size=SIZE: increase the size before printing the result
+-h, –human-readable: print sizes in power of 1024, which is Mb or Gb
+-H, –si: shows result in the power of 1000
+–total: omits all entries not relevant to available space, and presents the total
+-t, –type=TYPE: the result is limited to listing to file systems of a particular type
+–sync: invoke sync before the usage info
+-l, –local: limit listing to local file systems
+The -h(human-readable) option displays size in Mb or Gb, rather than bytes. Meanwhile, the -x(exclude) option allows uses to discount specific filesystems.
+
+df -T file.txt 
+
+
+6. chmod Command
+
+The chmod command allows users to alter or assign file permissions flags on a file or folder. The permission defines who can read, write, or run the file. 
+The code comes with references, which indicates to whom the permission will be applicable.
+
+Specific letters represent the references, and programmers can use these letters to assign permission. Below is the list of letters:
+
+u - the owner of the file
+g - this represents a group. So when assigned, it will apply to all members of the file’s group.
+o - users who are not the owner or a group member
+a - those who are all of the above
+Then comes the ‘modes’ that represent each of the permission types. The following are the permissions that a user can assign for a file:
+
+r - the letter means the user has the permission to the only read
+w - the letter corresponds to write or delete the file
+x - the mode allows users to execute a file
+
+So, one can use chmod to give change or assign permission to either an owner, group, or others. More so, the string of characters is followed by digits which represent the specific type of file permission.
+
+0: No permission is assigned
+1: Execute permission
+2: it has to write permission
+3: the user has write and execute permissions
+4: users can only read with this permission
+5: users have read and permission to execute
+6: it indicates that you have both read and write permissions
+7: it offers you to do anything with the file such as read, write and execute
+
+chmod 764 test.txt
