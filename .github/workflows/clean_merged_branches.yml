@@ -18,10 +18,16 @@ jobs:
 
       - name: Get merged branches
         run: |
-         git branch --merged  | grep -v 'master$'| while read branch
-         do 
-             echo "Processing branch: $branch"   
-         done
+         git branch --merged  | grep -v 'master$'| while read branch; do
+  
+          if [ "$branch" != "master" ]; then
+            # Delete the merged branch
+            #git branch -d $branch
+            echo "Deleted branch: $branch"
+          else
+            echo "Skipped branch: $branch  "
+          fi
+          done
 
       - name: Cleanup completed
         run: echo "Cleanup completed."
