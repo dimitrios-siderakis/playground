@@ -18,8 +18,9 @@ jobs:
 
       - name: Get merged branches
         run: |
-         git branch --merged  | grep -v 'master$'| while read branch; do
-         echo "Processing branch: $branch"   
+         git branch --merged  | grep -v 'master$'| while read branch
+         do 
+             echo "Processing branch: $branch"   
          done
 
       - name: Cleanup completed
