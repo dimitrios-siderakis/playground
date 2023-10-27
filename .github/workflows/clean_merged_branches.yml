@@ -1,0 +1,30 @@
+name: Cleanup Merged Branches
+
+on:
+    workflow_dispatch: 
+  #schedule:
+    #- cron: "0 0 * * *"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Fetch all branches
+        run: git fetch --prune --all
+
+      - name: Get merged branches
+        run: |
+          git for-each-ref --format="%(refname:short) %(upstream:track)" refs/heads | \
+          while read branch track; do
+            if [ "$track" = "gone" ]; then
+              echo "Branch $branch is merged and can be deleted."
+              git push --delete origin "$branch"
+            fi
+          done
+
+      - name: Cleanup completed
+        run: echo "Cleanup completed."
