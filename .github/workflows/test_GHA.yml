@@ -38,7 +38,13 @@ jobs:
     steps:
     - name: Job 1 Step
       run:  echo "Hello ${{ inputs.name }}"
-       
+    - name: Job 1 Step 2
+      run:  echo "How are you today?"
+    - name: Job 1 Step 3
+      run:  echo "All the best ${{ inputs.name }}"
+    - name: Job 1 Step 4
+      run:  echo "Nice seeing you today"
+ 
 
   job2:
     name: Job 2
