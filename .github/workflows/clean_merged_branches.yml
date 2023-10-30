@@ -23,6 +23,7 @@ jobs:
           if [ "$branch" != "master" ]; then
             # Delete the merged branch
             git branch -d $branch
+            git push origin --delete $branch
             echo "Deleted branch: $branch"
           else
             echo "Skipped branch: $branch  "
