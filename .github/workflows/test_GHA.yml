@@ -28,14 +28,16 @@ on:
         # The data type of the input
         type: string
 
-
+ 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   job0:
     name: Prep-job
     runs-on: ubuntu-latest
     steps:
-    - uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
+    - name: Output Inputs
+      run: echo "${{ toJSON(github.event.inputs) }}"
+    #- uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
   job1:
     name: Job 1
     runs-on: ubuntu-latest
