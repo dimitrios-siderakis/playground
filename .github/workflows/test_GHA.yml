@@ -39,7 +39,7 @@ jobs:
       run: echo "${{ toJSON(github.event.inputs) }}"
     #- uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
   job1:
-    name: Job 1
+    name:  "Test flow [Name: ${{ github.event.inputs.name }}, Name2: ${{ github.event.inputs.name2 }}]"
     runs-on: ubuntu-latest
       # You can specify the runner you want to use
     environment: test-approval
