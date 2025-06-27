@@ -31,13 +31,18 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  job0:
+    name: Prep-job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
   job1:
     name: Job 1
-    runs-on: ubuntu-latest  # You can specify the runner you want to use
+    runs-on: ubuntu-latest
+      # You can specify the runner you want to use
     environment: test-approval
 
     steps:
-    - uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
     - name: Job 1 Step
       run:  echo "Hello ${{ inputs.name }}"
     - name: Job 1 Step 2
