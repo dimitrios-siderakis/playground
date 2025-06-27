@@ -36,6 +36,7 @@ jobs:
     runs-on: ubuntu-latest  # You can specify the runner you want to use
 
     steps:
+    - uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
     - name: Job 1 Step
       run:  echo "Hello ${{ inputs.name }}"
     - name: Job 1 Step 2
@@ -54,7 +55,4 @@ jobs:
     steps:
     - name: Job 2 Step
       run:  echo "Hello ${{ inputs.name2 }}"
-    
-
-        
-        
+ 
